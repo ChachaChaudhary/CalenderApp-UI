@@ -1,0 +1,46 @@
+<div class="container">
+    <div nz-row nzType="flex" class="title" nzJustify="center">
+      <h1>Login</h1>
+    </div>
+  
+    <form [formGroup]="form" class="form" (ngSubmit)="submit()">
+      <div class="form-item">
+        <div nz-row nzSpan="12">
+          <label nz-col nzSpan="8">Email Address </label>
+          <div nz-col nzSpan="16">
+            <input type="email" nz-input formControlName="email" fullWidth placeholder="xyz@abc.com" />
+            <div ngxErrors="email">
+              <div ngxError="required" [when]="['dirty','touched']" class="alert alert-danger">
+                Email Address is Empty
+              </div>
+              <div ngxError="email" [when]="['dirty','touched']" class="alert alert-danger">
+                Invalid Email Address Format
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-item">
+        <div nz-row nzSpan="12">
+          <label nz-col nzSpan="8">Password </label>
+          <div nz-col nzSpan="16">
+            <input type="password" nz-input formControlName="password" fullWidth placeholder="*******" />
+            <div ngxErrors="password">
+              <div ngxError="required" [when]="['dirty','touched']" class="alert alert-danger">
+                Password is Empty
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div nz-row nzSpan="12">
+        <div class="form-item" nz-col nzOffset="8" nzSpan="16" nzJustify="center"><a class="text-link" routerLink="/auth/signup">Sign Up</a></div>
+      </div>
+      <div  nz-row nzSpan="12">
+        <div class="form-item" nzJustify="center"  nz-col nzOffset="8" nzSpan="16">
+            <button nz-button [disabled]="form.invalid" type="submit">Login</button>
+        </div>        
+      </div>
+    </form>
+  </div>
+ 

@@ -1,0 +1,15 @@
+<nz-layout nz-col  class="app-layout layout auth">
+    <nz-header class="layout-header">
+        <div nz-row nzSpan="8" nzType="flex" class="app-header">
+            <h2 nz-col nzSpan="4"><b>Calender</b></h2>
+            <div nz-col nzOffset="16" nzSpan="2" nzType="flex" nzJustify="center" nzAlign="middle">
+                <button *ngIf="showSignIn" nz-button type="button" [nzSize]="'large'" routerLink="/auth/login">SignIn</button>   
+            </div>
+        </div>
+    </nz-header>
+    <nz-content nz-row nzType="flex" nzJustify="center" nzAlign="middle">
+        <div class="inner-content" nz-row nzSpan="12">
+            <router-outlet></router-outlet>
+        </div>
+    </nz-content>
+</nz-layout>

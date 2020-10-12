@@ -1,0 +1,38 @@
+<nz-layout class="app-layout pages">
+  <nz-layout>
+    <nz-header class="layout-header">
+      <div class="app-header">
+        <div nz-row nzType="flex" nzJustify="space-between" nzAlign="middle">
+          <h2 nz-col nzSpan="4"><b>Calender</b></h2>
+          <div nz-col nzTrigger="click">Hi {{name}} ! Welcome              
+              <a  (click)="logout()" >           <i nz-icon nzType="poweroff" nzTheme="outline"></i></a>
+          </div>
+        </div>        
+      </div>
+    </nz-header>
+    <nz-content>
+      <div class="inner-content pages-content">
+        <nz-list nzItemLayout="vertical">
+          <nz-list-header><h1>{{schedules.length>0?'Here are your Upcoming Appointments':'No Upcoming Appointments Found'}}</h1></nz-list-header>
+          <nz-list-item *ngFor="let item of schedules">
+            <nz-list-item-meta>
+              <nz-list-item-meta-title>
+                <a>{{ item.name }}</a>
+              </nz-list-item-meta-title>
+              <nz-list-item-meta-description>
+                {{ item.description }}
+              </nz-list-item-meta-description>
+            </nz-list-item-meta>
+             
+            <ul nz-list-item-actions>
+              <nz-list-item-action><i nz-icon nzType="clock-circle-o" style="margin-right: 8px;"></i> Start at {{ item.start_time | date : "dd-MM-yyyy hh:mm a" }}</nz-list-item-action>
+                <nz-list-item-action>Ends at {{ item.end_time | date : "dd-MM-yyyy hh:mm a" }}</nz-list-item-action>
+          </ul>
+          </nz-list-item>
+          <nz-list-empty *ngIf="schedules.length === 0"></nz-list-empty>
+        </nz-list>
+        <button nz-button nzType="primary" nzShape="circle" class="createSchedule" nzSize="large" nzTooltipTitle="Create Appointment" nz-tooltip (click)="showCreatePopup()"><i nz-icon nzType="plus" nzTheme="outline"></i></button>
+      </div>      
+    </nz-content>
+  </nz-layout>  
+</nz-layout>

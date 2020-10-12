@@ -1,1 +1,112 @@
+
 /* You can add global styles to this file, and also import other style files */
+button {
+    margin-right: 10px !important;
+}
+
+form {    
+    margin-top:1rem !important;    
+}
+
+.alert.alert-danger {
+    color: red;
+}
+
+.ant-btn.ant-btn-default,.ant-btn.ant-btn-default:hover,.ant-btn.ant-btn-default:active {
+    font: bold !important;
+    color: white !important;
+}
+
+.ant-btn.ant-btn-default:hover {
+    background-color: #828080;
+}
+
+.ant-btn[disabled],.ant-btn[disabled]:hover {
+    background-color: lightgrey;
+}
+
+.ant-transfer-operation .ant-btn .ant-btn.ant-btn-default:hover {
+    background-color: #6d6c6c;
+}
+
+.ant-select-selection {
+    border-color: black !important;
+}
+
+.ant-select-selection.ant-select-selection:hover {
+    border-color:black !important;
+}
+
+.ant-divider-vertical {
+    background: black;
+}
+
+nz-footer {
+    text-align: center;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+}
+
+/*.ant-modal-header {
+    border-bottom: none;    
+    text-align: center;
+}*/
+.ant-modal-title {
+    font-size: 14px;
+    font-weight: 600;
+}
+/*.ant-modal-footer {
+    text-align: center;
+    border-top: none;
+    padding-top: 2rem;
+}*/
+
+.ant-message-loading .anticon {
+    color: black;
+}
+
+.ant-layout-content {
+    min-height: unset;
+}
+
+.pages-content .ant-btn {
+    font-size: 11px;
+}
+
+.pages-content li[nz-menu-item],.pages-content .ant-table-column-title{
+    font-weight: bold;
+    color: black;
+}
+
+.ant-form-item {
+    margin-bottom: 0px;
+}
+
+.ant-form-item label,.ant-form-item input{
+    font-size: 13px;
+}
+
+.ant-tabs-nav .ant-tabs-tab-active{
+    font-weight: bold;
+}
+
+.ant-table-thead > tr > th{
+    border-top: 1px solid #e8e8e8;
+    padding-bottom: 6px;
+}
+
+.ant-table-thead > tr:first-child > th:first-child{
+    width: 250px;
+}
+
+.ant-breadcrumb {
+    margin-bottom: 10px;
+}
+.ant-table-tbody > tr > td {    
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+.ant-list-item-meta-description{
+    font-size:11px;
+}
+

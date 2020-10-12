@@ -1,0 +1,89 @@
+
+
+  <form [formGroup]="signupform" class="form" (ngSubmit)="submit()">
+    <div class="form-item">
+      <div nz-row nzSpan="12">
+        <nz-form-label nz-col nzSpan="8" nzRequired nzNoColon>Name </nz-form-label>
+        <div nz-col nzSpan="16">
+          <input type="text" nz-input formControlName="name" fullWidth placeholder="Appointment with Roy" />
+          <div ngxErrors="name">
+            <div ngxError="required" [when]="['dirty','touched']" class="alert alert-danger">
+              Name is Empty
+            </div>
+            <div ngxError="minlength" [when]="['dirty']" class="alert alert-danger">
+              Minimum 3 Characters Required
+            </div>
+            <div ngxError="maxlength" [when]="['dirty']" class="alert alert-danger">
+              Maximum 30 Characters Required
+            </div>
+            <div ngxError="pattern" [when]="['dirty']" class="alert alert-danger">
+              Invalid Characters Found in the field
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-item">
+      <div nz-row nzSpan="12">
+        <nz-form-label nz-col nzSpan="8" nzRequired nzNoColon>From </nz-form-label>
+        <div nz-col nzSpan="8">
+          <nz-date-picker [(ngModel)]="start_date" (ngModelChange)="onStartDateChange($event)"  [ngModelOptions]="{standalone: true}"  [nzDisabledDate]="disabledDate"></nz-date-picker>
+          <div ngxErrors="start_date">
+            <div ngxError="required" [when]="['dirty','touched']" class="alert alert-danger">
+              Start Date is Empty
+            </div>
+           
+          </div>
+
+        </div>
+        <div nz-col nzSpan="8">
+        <nz-time-picker [(ngModel)]="start_time" [ngModelOptions]="{standalone: true}" (ngModelChange)="onStartTimeChange($event)"  nzFormat="HH:mm" [nzMinuteStep]="15"  [nzDisabledHours]="disabledHours.bind(null,start_date)"
+        [nzDisabledMinutes]="disabledMinutes.bind(null,start_date)"></nz-time-picker>
+        <div ngxErrors="start_time">
+          <div ngxError="required" [when]="['dirty','touched']" class="alert alert-danger">
+            Start Time is Empty
+          </div>
+         
+        </div>
+
+      </div>
+        </div>
+    </div>
+    <div class="form-item">
+      <div nz-row nzSpan="12">
+        <nz-form-label nz-col nzSpan="8" nzRequired nzNoColon>To </nz-form-label>
+        <div nz-col nzSpan="8">
+          <nz-date-picker [(ngModel)]="end_date" (ngModelChange)="onEndDateChange($event)"  [ngModelOptions]="{standalone: true}"  [nzDisabledDate]="disabledEndDate.bind(null,start_date)"></nz-date-picker>
+          <div ngxErrors="end_date">
+            <div ngxError="required" [when]="['dirty','touched']" class="alert alert-danger">
+              End Date is Empty
+            </div>
+           
+          </div>
+
+        </div>
+        <div nz-col nzSpan="8">
+        <nz-time-picker [(ngModel)]="end_time" [ngModelOptions]="{standalone: true}" (ngModelChange)="onEndTimeChange($event)"  nzFormat="HH:mm" [nzMinuteStep]="15"  [nzDisabledHours]="disabledEndHours.bind(null,start_date,end_date,start_time)"
+        [nzDisabledMinutes]="disabledEndMinutes.bind(null,end_date,start_time)"></nz-time-picker>
+        <div ngxErrors="end_time">
+          <div ngxError="required" [when]="['dirty','touched']" class="alert alert-danger">
+            End Time is Empty
+          </div>
+         
+        </div>
+
+      </div>
+        </div>
+    </div>
+    <div nz-row nzSpan="12">
+      <nz-form-label nz-col nzSpan="8" nzRequired nzNoColon>Description </nz-form-label>
+      <div nz-col nzSpan="16">
+        <textarea rows="4" style="width:100%" nz-input formControlName="description" placeholder="Meeting with Roy to discuss tommorow plan"> </textarea>
+      </div>
+    </div>
+    <div nz-row nzSpan="12">
+      <div nz-col nzSpan="16" nzOffset="8" class="form-item align-btn" nz-row nzType="flex" nzJustify="center">
+        <button nz-button [disabled]="signupform.invalid" type="submit">Submit</button>
+      </div>
+    </div>
+  </form>
