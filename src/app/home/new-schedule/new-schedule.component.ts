@@ -41,7 +41,7 @@ export class NewScheduleComponent {
 
   ngOnInit(){
     this.signupform = this.fb.group({
-      name: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern('[a-zA-Z0-9,.\s]*')]],
+      name: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern('[a-zA-Z0-9,. ]*')]],
       description: [''],
       start_date: ['', [Validators.required]],
       end_date: ['', [Validators.required]],
