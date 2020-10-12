@@ -5,7 +5,7 @@
 
 1. Run `npm install` to download all the dependencies.
 2. Run `npm run start` for starting a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
+3. Start the Calender App Server as UI is utilizing its endpoint. Calender App Servcer can be found at https://github.com/ChachaChaudhary/CalenderApp/tree/master.
 
 
 ## What Components it has?
