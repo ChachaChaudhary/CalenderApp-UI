@@ -20,7 +20,7 @@ export class HomeService {
   }
 
   public logout() {
-    return this.apiService.get(this.LOGOUT,false,'logging out');
+    return this.apiService.get(this.LOGOUT,null,false,'logging out');
        
   }
   public createSchedule(data) {
